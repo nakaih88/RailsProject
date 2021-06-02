@@ -4,12 +4,12 @@
 
 
 <%= form_for(@review) do |f|%>
-  <% if params[:shop_id] %>
-    <%= f.hidden_field :shop_id %>
+  <% if params[:anime_id] %>
+    <%= f.hidden_field :anime_id %>
   <% else %>
     <div>
-      <%= f.label :shop_id, "Select a Shop" %>
-      <%= f.collection_select :shop_id, Shop.alpha, :id, :name_and_category, include_blank: true %>
+      <%= f.label :anime_id, "Select an Anime" %>
+      <%= f.collection_select :anime_id, Anime.alpha, :id, :name_and_genre, include_blank: true %>
     </div>
   <% end %>
   <div>
@@ -23,8 +23,8 @@
   </div>
   <br>
   <div>
-    <%= f.label :content %>
-    <%= f.text_area :content, size: "25x10" %>
+    <%= f.label :description %>
+    <%= f.text_area :description, size: "25x10" %>
   </div>
   <br>
 
