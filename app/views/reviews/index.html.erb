@@ -1,5 +1,5 @@
-<% if @shop %>
-  <h1>Reviews for <%= @shop.name %> 
+<% if @anime %>
+  <h1>Reviews for <%= @anime.name %> 
 <% else %>
   <h1>All the Reviews </h1>
 <% end %>
@@ -8,7 +8,7 @@
 <% @reviews.each do |review| %>
 
   <li>
-  <%= review.shop.name %>: <%= link_to review.title, review_path(review)%> - <%= review.stars%> 
+  <%= review.anime.name %>: <%= link_to review.title, review_path(review)%> - <%= review.stars%> 
   </li> <br>
 
 <% end %>
