@@ -1,30 +1,30 @@
-<%= render partial: 'layouts/errors', locals: {object: @shop}  %>
-<%= form_for(@shop) do |f|%> 
+<%= render partial: 'layouts/errors', locals: {object: @anime}  %>
+<%= form_for(@anime) do |f|%> 
     <div>
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
     
     <div>
-      <%= f.label :price_range %> 
-      <%= f.select :price_range,options_for_select(["$", "$$", "$$$"]), include_blank: true %>   
+      <%= f.label :epiosde_length %> 
+      <%= f.select :epiosde_length,options_for_select(["0 - 10 Minutes", "10 - 30 Minutes", "30 Minutes - 1 Hour"]), include_blank: true %>   
     </div>
     <div>
       <%= f.label :address %>
       <%= f.text_field :address %> 
     </div>
 
-    <p> Select a Category: </p>
+    <p> Select a Genre: </p>
     <div>
-      <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: 'Select One'%>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: 'Select One'%>
   
     </div>
   
-    <p> Or create a new Category: </p>
+    <p> Or create a new Genre: </p>
     <div>
-      <%= f.fields_for :category do |c| %>
-        <%= c.label :name %>
-        <%= c.text_field :name %>
+      <%= f.fields_for :genre do |g| %>
+        <%= g.label :name %>
+        <%= g.text_field :name %>
       <% end %> 
     </div> 
     <br>
