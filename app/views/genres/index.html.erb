@@ -1,0 +1,16 @@
+<h1>All the Genres</h1>
+
+<ol>
+  <% @genres.each do |genre| %>
+    <li><%= genre.name %></li>
+  <% end %>
+</ol>
+
+
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

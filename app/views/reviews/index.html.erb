@@ -1,0 +1,23 @@
+<% if @shop %>
+  <h1>Reviews for <%= @shop.name %> 
+<% else %>
+  <h1>All the Reviews </h1>
+<% end %>
+
+<ul>
+<% @reviews.each do |review| %>
+
+  <li>
+  <%= review.shop.name %>: <%= link_to review.title, review_path(review)%> - <%= review.stars%> 
+  </li> <br>
+
+<% end %>
+</ul>
+
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

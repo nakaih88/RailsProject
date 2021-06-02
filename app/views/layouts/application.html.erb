@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsProject</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+ 
 
   <body>
+   <% if flash[:errors] %>
+      <ul style="color: red;">
+        <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+   <div><%= render_nav_bar %></div>
     <%= yield %>
   </body>
 </html>
