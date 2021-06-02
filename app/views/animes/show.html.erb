@@ -1,20 +1,20 @@
-<h1><%= @shop.name%>  </h1>
+<h1><%= @anime.name%>  </h1>
 
 
-<h2> <%= @shop.category_name %> </h2>
+<h2> <%= @anime.genre_name %> </h2>
 <div>
-  <p><%= @shop.price_range %></p>
-  <p><%= @shop.address %></p>
+  <p><%= @anime.epiosde_length %></p>
+  <p><%= @anime.main_character %></p>
 </div>
 
 
-<%= link_to "Edit #{@shop.name}", edit_shop_path(@shop) if @shop.user == current_user%><br>
-<%= link_to "Delete #{@shop.name}", {:controller => "shops", :action => 'destroy'}, :method => :delete if @shop.user == current_user %><br><br
+<%= link_to "Edit #{@anime.name}", edit_anime_path(@anime) if @anime.user == current_user%><br>
+<%= link_to "Delete #{@anime.name}", {:controller => "animes", :action => 'destroy'}, :method => :delete if @anime.user == current_user %><br><br
 
 
 <br></br>
 
-<%= link_to "See all Reviews", shop_reviews_path(@shop) %> <br><br>
+<%= link_to "See all Reviews", anime_reviews_path(@anime) %> <br><br>
 
 
 <button onclick="goBack()">Go Back</button>
