@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :reviews
-    has_many :reviewed_animes, through: :reviews, source: :anime 
+    has_many :reviewed_animes, through: :reviews, source: :anime
+    
     has_many :animes
 
     has_secure_password 
