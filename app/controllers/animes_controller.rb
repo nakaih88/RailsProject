@@ -25,7 +25,7 @@ class AnimesController < ApplicationController
         @animes = category.animes 
       
       else 
-        @animes = Anime.order_by_rating.includes(:category) 
+        @animes = Anime.order_by_stars.includes(:category) 
       end 
     end 
 

@@ -1,7 +1,7 @@
 <%= render partial: 'layouts/errors', locals: {object: @anime}  %>
 <%= form_for(@anime) do |f|%> 
     <div>
-      <%= f.label :name %>
+      <%= f.label :anime_name %>
       <%= f.text_field :name %>
     </div>
     
@@ -10,7 +10,7 @@
       <%= f.select :episode_length,options_for_select(["0 - 10 Minutes", "10 - 30 Minutes", "1+ Hour(s)"]), include_blank: true %>   
     </div>
     <div>
-      <%= f.label :character %>
+      <%= f.label :main_character %>
       <%= f.text_field :character %> 
     </div>
 
@@ -20,10 +20,10 @@
   
     </div>
   
-    <p> Or create a new Category: </p>
+    <p> Or create a new Genre: </p>
     <div>
       <%= f.fields_for :category do |c| %>
-        <%= c.label :name %>
+        <%= c.label :Genre_name %>
         <%= c.text_field :name %>
       <% end %> 
     </div> 
