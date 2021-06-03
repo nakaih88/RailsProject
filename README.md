@@ -1,30 +1,29 @@
-# README
+# Your own Anime List!
 
-Shop
-Shop is an app that will help to add a store and put a review for it, any other user can review the store you added. 
+This small web app lets you create your own thoughts an a particular anime you have watched!
 
-Prerequisites
-The setup steps expect the following tools to be installed on the system.
+## Installation
 
-Github
-Ruby 2.4.0
-Rails 5.0.2
+You git clone it by the following:
 
-Clone the repository
+    $ git@github.com:nakaih88/RailsProject.git
 
-git clone https://github.com/Ahmed13061988/Shop
-cd shop
+Execute:
 
-Starting the Server
-You can start the rails server using the following command:
+    $ bundle install
+    or
+    $ bundle update
 
-  rails s
-Visit the site at: http://localhost:3000
+## Usage
 
-License
-Distributed under the MIT License. See LICENSE for more information.
+Type the below and follow the screen prompts
 
-Usage 
-You can Sign up or Log in if you have already an account. 
-You can sign up using your google account by hitting the button "Signup with Google". 
+    $ rails s
 
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/genshin_chars. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/Anime-Sinatra/blob/master/CODE_OF_CONDUCT.md).
+
+## License
+
+The app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
