@@ -11,7 +11,7 @@ class Anime < ApplicationRecord
     validate :not_a_duplicate 
 
     #scope methods 
-    scope :order_by_rating, -> {left_joins(:reviews).group(:id).order('avg(stars) desc')}
+    scope :order_by_rating, -> {left_joins(:reviews).group(:id).order('avg(rating) desc')}
     # scope :most_popular, -> {left_joins(:reviews).group(:id).order('count(reviews.id) desc').limit(3)}  
 
     def self.alpha

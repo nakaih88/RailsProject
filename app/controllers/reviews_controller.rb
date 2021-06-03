@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
     private 
 
     def review_params
-        params.require(:review).permit(:anime_id, :content, :stars, :title)  
+        params.require(:review).permit(:anime_id, :content, :rating, :title)  
     end 
 
 end
