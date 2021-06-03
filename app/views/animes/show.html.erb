@@ -1,21 +1,17 @@
 <h1><%= @anime.name%>  </h1>
 
-
 <h2> <%= @anime.category_name %> </h2>
 <div>
   <p><%= @anime.episode_length %></p>
   <p><%= @anime.character %></p>
 </div>
 
-
 <%= link_to "Edit #{@anime.name}", edit_anime_path(@anime) if @anime.user == current_user%><br>
 <%= link_to "Delete #{@anime.name}", {:controller => "animes", :action => 'destroy'}, :method => :delete if @anime.user == current_user %><br><br
-
 
 <br></br>
 
 <%= link_to "See all Reviews", anime_reviews_path(@anime) %> <br><br>
-
 
 <button onclick="goBack()">Go Back</button>
 

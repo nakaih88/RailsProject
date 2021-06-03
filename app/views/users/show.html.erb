@@ -4,7 +4,7 @@
 <% else %>
 <h2>Welcome to <%= @user.username %>'s Profile! </h2>
 
-<h3>Go check out the links above!</h3>
+<h3>Go check out the links above! Or see your Animes below!</h3>
 <ul>
   <% @user.reviewed_animes.each do |s|%>
   <li> <%= link_to s.name_and_category, anime_path(s)%> </li>
