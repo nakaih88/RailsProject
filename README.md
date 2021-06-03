@@ -1,6 +1,6 @@
-# Your own Anime List!
+# Your own Anime List v.2!
 
-This small web app lets you create your own thoughts an a particular anime you have watched!
+This small web app lets you create Animes you've liked/watched and can review them!
 
 ## Installation
 
@@ -19,6 +19,7 @@ Execute:
 Type the below and follow the screen prompts
 
     $ rails s
+    and go to http://localhost:3000 to start!
 
 ## Contributing
 

@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
             redirect_to user_path(@user)
           else
             #  byebug
-            flash[:errors] = ["Incorrect Username or Password"]
+            flash[:errors] = ["Incorrect Username and or Password, please try again."]
             redirect_to login_path notice: "Invalid Input!"
           end
     end
