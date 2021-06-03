@@ -2,8 +2,7 @@ class SessionsController < ApplicationController
     skip_before_action :redirect_if_not_logged_in
   
      def home 
-     end 
-  
+     end
   
      def new  
         @user = User.new
@@ -16,12 +15,10 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id 
             redirect_to user_path(@user)
           else
-            #  byebug
             flash[:errors] = ["Incorrect Username and or Password, please try again."]
             redirect_to login_path notice: "Invalid Input!"
           end
     end
-  
   
     def google_omniauth_create
         omniauth = request.env['omniauth.auth']['info']
@@ -39,9 +36,5 @@ class SessionsController < ApplicationController
     end 
     
       private
-    
-        # def auth
-        #   request.env['omniauth.auth']
-        # end
-     
-      end
+      
+end
