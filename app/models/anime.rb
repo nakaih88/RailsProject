@@ -28,7 +28,7 @@ class Anime < ApplicationRecord
 
     def category_name
         category.try(:name)
-      end
+    end
     
       def name_and_category
         "#{name} - #{category.try(:name)}"
