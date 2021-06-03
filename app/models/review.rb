@@ -7,5 +7,5 @@ class Review < ApplicationRecord
     validates :content, length: {maximum: 250} 
     validates :stars, numericality: {only_integer: true, in: 1...5}
     
-    validates :anime, uniqueness: { scope: :user, message: "has already been reviewed by you"}
+    validates :anime, uniqueness: { scope: :user, message: "has already been reviewed by yourself"}
 end
