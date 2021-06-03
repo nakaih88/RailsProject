@@ -23,10 +23,12 @@ class ReviewsController < ApplicationController
     end
     
     def index
+      #binding.pry
     if @anime = Anime.find_by_id(params[:anime_id])
           @reviews = @anime.reviews
           
         else
+          #binding.pry
           @reviews = Review.all
         end
       end
@@ -34,7 +36,7 @@ class ReviewsController < ApplicationController
     private 
 
     def review_params
-        params.require(:review).permit(:anime_id, :description, :stars, :title)  
+        params.require(:review).permit(:anime_id, :content, :stars, :title)  
     end 
 
 end

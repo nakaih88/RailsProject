@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
      def home 
      end 
   
+  
      def new  
         @user = User.new
      end 
@@ -15,10 +16,12 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id 
             redirect_to user_path(@user)
           else
-            flash[:errors] = ["Incorrect Username and or Password"]
-            redirect_to login_path notice: "Invalid Input"
+            #  byebug
+            flash[:errors] = ["Incorrect Username or Password"]
+            redirect_to login_path notice: "Invalid Input!"
           end
     end
+  
   
     def google_omniauth_create
         omniauth = request.env['omniauth.auth']['info']
@@ -34,5 +37,11 @@ class SessionsController < ApplicationController
         session.clear  
         redirect_to '/'
     end 
+    
       private
- end
+    
+        # def auth
+        #   request.env['omniauth.auth']
+        # end
+     
+      end

@@ -6,25 +6,25 @@
     </div>
     
     <div>
-      <%= f.label :epiosde_length %> 
-      <%= f.select :epiosde_length,options_for_select(["0 - 10 Minutes", "10 - 30 Minutes", "30 Minutes - 1 Hour"]), include_blank: true %>   
+      <%= f.label :episode_length %> 
+      <%= f.select :episode_length,options_for_select(["10m", "20m", "1hr"]), include_blank: true %>   
     </div>
     <div>
-      <%= f.label :address %>
-      <%= f.text_field :address %> 
+      <%= f.label :character %>
+      <%= f.text_field :character %> 
     </div>
 
-    <p> Select a Genre: </p>
+    <p> Select a Category: </p>
     <div>
-      <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: 'Select One'%>
+      <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: 'Select One'%>
   
     </div>
   
-    <p> Or create a new Genre: </p>
+    <p> Or create a new Category: </p>
     <div>
-      <%= f.fields_for :genre do |g| %>
-        <%= g.label :name %>
-        <%= g.text_field :name %>
+      <%= f.fields_for :category do |c| %>
+        <%= c.label :name %>
+        <%= c.text_field :name %>
       <% end %> 
     </div> 
     <br>

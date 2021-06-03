@@ -4,35 +4,35 @@ class AnimesController < ApplicationController
 
     def new 
         @anime = Anime.new  
-        @anime.build_genre 
+        @anime.build_category 
     end 
 
     def create
-        @anime = Anime.new(Anime_params) 
+        @anime = Anime.new(anime_params) 
         @anime.user_id = session[:user_id] 
    
        if @anime.save 
          redirect_to anime_path(@anime) 
        else
-        @anime.build_genre  
+        @anime.build_category  
          render :new 
        end
      end
 
     def index   
       if params[:category_id]
-        genre = Genre.find(params[:genre_id])
-        @animes = genre.animes 
+        category = Category.find(params[:category_id])
+        @animes = category.animes 
       
       else 
-        @animes = Anime.order_by_rating.includes(:genre) 
+        @animes = Anime.order_by_rating.includes(:category) 
       end 
     end 
 
-    def show
+    def show 
     end 
 
-    def edit
+    def edit 
       if authorized_to_edit?(@anime) 
        render :edit   
       else 
@@ -57,7 +57,7 @@ class AnimesController < ApplicationController
     private 
 
     def anime_params
-        params.require(:anime).permit(:name, :episode_length, :main_character, :genre_id, genre_attributes: [:name])
+        params.require(:anime).permit(:name, :episode_length, :character, :category_id, category_attributes: [:name])
       end
 
     def set_anime
@@ -66,7 +66,7 @@ class AnimesController < ApplicationController
      end
 
      def redirect_if_not_authorized 
-      if @anime.update(name: params[:name], episode_length: params[:episode_length], main_character: params[:main_character])   
+      if @anime.update(name: params[:name], episode_length: params[:episode_length], character: params[:character])   
         redirect_to anime_path(@anime)
       else
         redirect_to user_path(current_user)     

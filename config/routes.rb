@@ -5,15 +5,21 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new' 
   post '/signup' => 'users#create' 
-  delete '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
+  # get '/most_popular' => 'animes#most_popular' 
 
   get '/auth/:google_oauth2/callback' => 'sessions#google_omniauth_create'
  
   
   resources :reviews
-  resources :shops do
+  resources :animes do
     resources :reviews, only: [:new, :index]
   end
 
   resources :users, only: [:show]
+  # resources :categories
+  # resources :animes
+  # resources :reviews
+  # resources :users
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

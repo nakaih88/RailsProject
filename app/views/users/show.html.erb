@@ -1,13 +1,13 @@
 <h1>Anime</h1>
 <% if @user != current_user %>
-<h1><%= "You are not permitted to be here!"%></h1>
+<h1><%= "Nice try ;), but You are not allowed to be here!"%></h1>
 <% else %>
 <h2>Welcome to <%= @user.username %>'s Profile! </h2>
 
 <h3>Here are the animes reviewed by <%=@user.username %>:</h3>
 <ul>
-  <% @user.reviewed_animes.each do |a|%>
-  <li> <%= link_to a.name_and_genre, anime_path(a)%> </li>
+  <% @user.reviewed_animes.each do |s|%>
+  <li> <%= link_to s.name_and_category, anime_path(s)%> </li>
   <% end %>
   <% end %>
 </ul>

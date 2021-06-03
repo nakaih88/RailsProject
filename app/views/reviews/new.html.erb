@@ -9,7 +9,7 @@
   <% else %>
     <div>
       <%= f.label :anime_id, "Select an Anime" %>
-      <%= f.collection_select :anime_id, Anime.alpha, :id, :name_and_genre, include_blank: true %>
+      <%= f.collection_select :anime_id, Anime.alpha, :id, :name_and_category, include_blank: true %>
     </div>
   <% end %>
   <div>
@@ -23,8 +23,8 @@
   </div>
   <br>
   <div>
-    <%= f.label :description %>
-    <%= f.text_area :description, size: "25x10" %>
+    <%= f.label :content %>
+    <%= f.text_area :content, size: "25x10" %>
   </div>
   <br>
 

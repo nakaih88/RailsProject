@@ -1,15 +1,15 @@
 <h1>All the Animes</h1>
 <%# <%= form_tag('/animes',:method=>:get) do %>                           
-<%# <%= select_tag "genre_id", options_from_collection_for_select(Genre.all, "id", "name", params[:genre_id]), include_blank: 'Select One' %>     
+<%# <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name", params[:category_id]), include_blank: 'Select One' %>     
 <%# <%= submit_tag %> 
 <%# <% end %> 
 
 <% @animes.each do |a| %>
 
-  <h2><%= link_to a.name, anime_path(a.id)%> - <%= a.genre.name %> - <%= a.episode_length %> </h2>
+  <h2><%= link_to a.name, anime_path(a.id)%> - <%= a.category.name %> - <%= a.episode_length %> </h2>
  
-  <p><h3>Main Character: <%= a.main_character %></p></h3>
-   <%= link_to "Write a review", new_anime_review_path(a.id) %> 
+  <p><h3>Character: <%= a.character %></p></h3>
+   <%= link_to "Write a review", new_anime_review_path(s.id) %> 
   <% end %>
 
   <button onclick="goBack()">Go Back</button>
