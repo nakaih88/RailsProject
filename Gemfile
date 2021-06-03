@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
  gem 'bcrypt', '~> 3.1.7'
  # omniauth gems
-# gem 'omniauth'
+gem 'omniauth'
 # gem 'omniauth-github'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'omniauth-google-oauth2'

@@ -285,6 +285,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  omniauth
   omniauth-google-oauth2
   pry
   puma (~> 4.1)
