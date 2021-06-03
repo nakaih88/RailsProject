@@ -1,4 +1,4 @@
-<h1>All the Animes</h1>
+<h1>All Animes</h1>
 <%# <%= form_tag('/animes',:method=>:get) do %>                           
 <%# <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name", params[:category_id]), include_blank: 'Select One' %>     
 <%# <%= submit_tag %> 
@@ -8,8 +8,8 @@
 
   <h2><%= link_to a.name, anime_path(a.id)%> - <%= a.category.name %> - <%= a.episode_length %> </h2>
  
-  <p><h3>Character: <%= a.character %></p></h3>
-   <%= link_to "Write a review", new_anime_review_path(s.id) %> 
+  <p><h3>Main Character: <%= a.character %></p></h3>
+   <%= link_to "Write a review", new_anime_review_path(a.id) %> 
   <% end %>
 
   <button onclick="goBack()">Go Back</button>

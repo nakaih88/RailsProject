@@ -7,14 +7,14 @@
     
     <div>
       <%= f.label :episode_length %> 
-      <%= f.select :episode_length,options_for_select(["10m", "20m", "1hr"]), include_blank: true %>   
+      <%= f.select :episode_length,options_for_select(["0 - 10 Minutes", "10 - 30 Minutes", "1+ Hour(s)"]), include_blank: true %>   
     </div>
     <div>
       <%= f.label :character %>
       <%= f.text_field :character %> 
     </div>
 
-    <p> Select a Category: </p>
+    <p> Select a Genre: </p>
     <div>
       <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: 'Select One'%>
   

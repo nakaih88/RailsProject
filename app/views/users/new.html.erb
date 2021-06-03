@@ -1,8 +1,8 @@
-<h1>Sign up!</h1>
+<h1>Sign up</h1>
 
   <% if @user.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> We can't save that:</h2>
+    <h2><%= pluralize(@user.errors.count, "error") %>(s) has been found:</h2>
 
     <ul>
     <% @user.errors.full_messages.each do |msg| %>
