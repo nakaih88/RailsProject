@@ -22,9 +22,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
  gem 'bcrypt', '~> 3.1.7'
  # omniauth gems
-gem 'omniauth'
 # gem 'omniauth-github'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
